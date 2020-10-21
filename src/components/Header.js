@@ -8,6 +8,8 @@ import Link from '@material-ui/core/Link';
 const useStyles = makeStyles((theme) => ({
   toolbar: {
     borderBottom: `1px solid ${theme.palette.divider}`,
+    backgroundColor: theme.palette.primary.main,
+    color: theme.palette.primary.contrastText
   },
   toolbarTitle: {
     flex: 1,
@@ -23,16 +25,12 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const sections = [
-  { title: 'Technology', url: '#' },
-  { title: 'Design', url: '#' },
-  { title: 'Culture', url: '#' },
-  { title: 'Business', url: '#' },
-  { title: 'Politics', url: '#' },
-  { title: 'Opinion', url: '#' },
-  { title: 'Science', url: '#' },
-  { title: 'Health', url: '#' },
-  { title: 'Style', url: '#' },
-  { title: 'Travel', url: '#' },
+  { title: 'Project', url: '#' },
+  { title: 'Pitch', url: '#' },
+  { title: 'Prototype', url: '#' },
+  { title: 'Report', url: '#' },
+  { title: 'Gallery', url: '#' },
+  { title: 'Team', url: '#' }
 ];
 
 export default function Header(props) {

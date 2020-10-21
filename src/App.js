@@ -11,12 +11,12 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Container maxWidth="lg">
-        <Header title="Blog" />
+      <Header title="Invisible Scars" />
         <main>
-          <HomePage/>
+          <Container>
+            <HomePage/>
+          </Container>
         </main>
-      </Container>
       <Footer title="Footer" description="Something here to give the footer a purpose!" />
     </ThemeProvider>
   );

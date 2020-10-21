@@ -9,11 +9,21 @@ import FeaturedPost from '../components/homepage/FeaturedPost';
 const useStyles = makeStyles((theme) => ({
     mainGrid: {
       marginTop: theme.spacing(3),
+      paddingBottom: theme.spacing(3)
     },
     post: {
       ...theme.typography.body2,
       padding: theme.spacing(3, 0),
     },
+    postLeft: {
+      textAlign: "right"
+    },
+    postTitle: {
+      marginLeft: theme.spacing(3)
+    },
+    postTitleRight: {
+      marginRight: theme.spacing(3)
+    }
 }));
   
 const mainFeaturedPost = {
@@ -50,15 +60,24 @@ function HomePage() {
     return (
         <React.Fragment>
           <MainFeaturedPost post={mainFeaturedPost} />
-          <Grid container spacing={4}>
-            {featuredPosts.map((post) => (
-              <FeaturedPost key={post.title} post={post} />
-            ))}
-          </Grid>
           <Grid container spacing={5} className={classes.mainGrid}>
             <Grid item xs={12}>
-              <Typography variant="h6" gutterBottom>
-                From the firehose
+              <Typography variant="h5" gutterBottom className={classes.postTitle}>
+                About
+              </Typography>
+              <Divider />
+              <div className={classes.post}>
+                Lorem Ipsum...
+              </div>
+              <Grid container spacing={4}>
+                {featuredPosts.map((post) => (
+                  <FeaturedPost key={post.title} post={post} />
+                ))}
+              </Grid>
+            </Grid>
+            <Grid item xs={12} className={classes.postLeft}>
+              <Typography variant="h5" gutterBottom className={classes.postTitleRight}>
+                Title
               </Typography>
               <Divider />
               <div className={classes.post}>
