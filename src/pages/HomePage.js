@@ -16,6 +16,10 @@ const useStyles = makeStyles((theme) => ({
       padding: theme.spacing(3, 0),
     },
     postLeft: {
+      marginBottom: theme.spacing(5)
+    },
+    postRight: {
+      marginBottom: theme.spacing(5),
       textAlign: "right"
     },
     postTitle: {
@@ -61,9 +65,9 @@ function HomePage() {
         <React.Fragment>
           <MainFeaturedPost post={mainFeaturedPost} />
           <Grid container spacing={5} className={classes.mainGrid}>
-            <Grid item xs={12}>
+            <Grid item xs={12} className={classes.postLeft}>
               <Typography variant="h5" gutterBottom className={classes.postTitle}>
-                About
+                Project
               </Typography>
               <Divider />
               <div className={classes.post}>
@@ -75,9 +79,45 @@ function HomePage() {
                 ))}
               </Grid>
             </Grid>
-            <Grid item xs={12} className={classes.postLeft}>
+            <Grid item xs={12} className={classes.postRight}>
               <Typography variant="h5" gutterBottom className={classes.postTitleRight}>
-                Title
+                Pitch
+              </Typography>
+              <Divider />
+              <div className={classes.post}>
+                Lorem Ipsum...
+              </div>
+            </Grid>
+            <Grid item xs={12} className={classes.postLeft}>
+              <Typography variant="h5" gutterBottom className={classes.postTitle}>
+                Prototype
+              </Typography>
+              <Divider />
+              <div className={classes.post}>
+                Lorem Ipsum...
+              </div>
+            </Grid>
+            <Grid item xs={12} className={classes.postRight}>
+              <Typography variant="h5" gutterBottom className={classes.postTitleRight}>
+                Report
+              </Typography>
+              <Divider />
+              <div className={classes.post}>
+                Lorem Ipsum...
+              </div>
+            </Grid>
+            <Grid item xs={12} className={classes.postLeft}>
+              <Typography variant="h5" gutterBottom className={classes.postTitle}>
+                Gallery
+              </Typography>
+              <Divider />
+              <div className={classes.post}>
+                Lorem Ipsum...
+              </div>
+            </Grid>
+            <Grid item xs={12} className={classes.postRight}>
+              <Typography variant="h5" gutterBottom className={classes.postTitleRight}>
+                Team
               </Typography>
               <Divider />
               <div className={classes.post}>

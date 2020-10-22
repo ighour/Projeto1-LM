@@ -3,35 +3,18 @@ import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import Link from '@material-ui/core/Link';
 
 const useStyles = makeStyles((theme) => ({
   toolbar: {
     borderBottom: `1px solid ${theme.palette.divider}`,
     backgroundColor: theme.palette.primary.main,
-    color: theme.palette.primary.contrastText
+    color: theme.palette.primary.contrastText,
+    marginBottom: theme.spacing(3)
   },
   toolbarTitle: {
-    flex: 1,
-  },
-  toolbarSecondary: {
-    justifyContent: 'space-between',
-    overflowX: 'auto',
-  },
-  toolbarLink: {
-    padding: theme.spacing(1),
-    flexShrink: 0,
-  },
+    flex: 1
+  }
 }));
-
-const sections = [
-  { title: 'Project', url: '#' },
-  { title: 'Pitch', url: '#' },
-  { title: 'Prototype', url: '#' },
-  { title: 'Report', url: '#' },
-  { title: 'Gallery', url: '#' },
-  { title: 'Team', url: '#' }
-];
 
 export default function Header(props) {
   const classes = useStyles();
@@ -50,20 +33,6 @@ export default function Header(props) {
         >
           {title}
         </Typography>
-      </Toolbar>
-      <Toolbar component="nav" variant="dense" className={classes.toolbarSecondary}>
-        {sections.map((section) => (
-          <Link
-            color="inherit"
-            noWrap
-            key={section.title}
-            variant="body2"
-            href={section.url}
-            className={classes.toolbarLink}
-          >
-            {section.title}
-          </Link>
-        ))}
       </Toolbar>
     </React.Fragment>
   );
