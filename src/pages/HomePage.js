@@ -3,37 +3,28 @@ import { makeStyles } from '@material-ui/styles';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
-import MainFeaturedPost from '../components/homepage/MainFeaturedPost';
+// import MainFeaturedPost from '../components/homepage/MainFeaturedPost';
 // import FeaturedPost from '../components/homepage/FeaturedPost';
+import { Player } from 'video-react';
 
 const useStyles = makeStyles((theme) => ({
     mainGrid: {
-      marginTop: theme.spacing(3),
+      marginTop: theme.spacing(1),
       paddingBottom: theme.spacing(3)
     },
-    postLeft: {
+    section: {
       marginBottom: theme.spacing(5)
-    },
-    postRight: {
-      marginBottom: theme.spacing(5),
-      textAlign: "right"
-    },
-    postTitle: {
-      marginLeft: theme.spacing(3)
-    },
-    postTitleRight: {
-      marginRight: theme.spacing(3)
     }
 }));
   
-const mainFeaturedPost = {
-    title: 'Title of a longer featured blog post',
-    description:
-      "Multiple lines of text that form the lede, informing new readers quickly and efficiently about what's most interesting in this post's contents.",
-    image: 'https://source.unsplash.com/random',
-    imgText: 'main image description',
-    linkText: 'Continue reading…',
-  };
+// const mainFeaturedPost = {
+//     title: 'Title of a longer featured blog post',
+//     description:
+//       "Multiple lines of text that form the lede, informing new readers quickly and efficiently about what's most interesting in this post's contents.",
+//     image: 'https://source.unsplash.com/random',
+//     imgText: 'main image description',
+//     linkText: 'Continue reading…',
+//   };
   
   // const featuredPosts = [
   //   {
@@ -59,18 +50,16 @@ function HomePage() {
 
     return (
         <React.Fragment>
-          <MainFeaturedPost post={mainFeaturedPost} />
-          <Grid container spacing={5} className={classes.mainGrid}>
-            <Grid item xs={12} className={classes.postLeft}>
-              <Typography variant="h5" gutterBottom className={classes.postTitle}>
-                Project
-              </Typography>
-              <Divider />
+          {/* <MainFeaturedPost post={mainFeaturedPost} /> */}
+          <Grid container spacing={1} className={classes.mainGrid}>
+            <Grid item xs={12} className={classes.section}>
+              <Player>
+                <source src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4" />
+              </Player>
+            </Grid>
+            <Grid item xs={12} className={classes.section}>
               <p>
-                Teaser | About
-              </p>
-              <p>
-                Team
+                About
               </p>
               {/* <Grid container spacing={4}>
                 {featuredPosts.map((post) => (
@@ -78,29 +67,50 @@ function HomePage() {
                 ))}
               </Grid> */}
             </Grid>
-            <Grid item xs={12} className={classes.postRight}>
-              <Typography variant="h5" gutterBottom className={classes.postTitleRight}>
+            <Grid item xs={12}>
+              <Typography variant="h5" gutterBottom align="right" color="primary">
                 Pitch
               </Typography>
               <Divider />
-              <p>
-                What
-              </p>
-              <p>
-                Why
-              </p>
-              <p>
-                Who
-              </p>
-              <p>
-                How
-              </p>
-              <p>
-                UX Mapping
-              </p>
+              <Grid container spacing={1} alignContent="space-around" justify="space-around">
+                <Grid item xs={4}>
+                  <Typography variant="overline" gutterBottom align="center" color="secondary">
+                    What
+                  </Typography>
+                  <Typography>
+                    A digital immersive experience in a room with video and sound.
+                  </Typography>
+                  <Typography>
+                  A video telling the story of a soldier that comes home with a post traumatic stress disorder.
+                  </Typography>
+                  <Typography>
+                    The users heart rate will be measured to analyse, visually, it’s fluctuations as the experience advances.
+                  </Typography>
+                </Grid>
+                <Grid item xs={4}>
+                  <Typography variant="overline" gutterBottom align="center" color="secondary">
+                    Why
+                  </Typography>
+                </Grid>
+                <Grid item xs={4}>
+                  <Typography variant="overline" gutterBottom align="center" color="secondary">
+                    Who
+                  </Typography>
+                </Grid>
+                <Grid item xs={4}>
+                  <Typography variant="overline" gutterBottom align="center" color="secondary">
+                    How
+                  </Typography>
+                </Grid>
+                <Grid item xs={4}>
+                  <Typography variant="overline" gutterBottom align="center" color="secondary">
+                    UX Mapping
+                  </Typography>
+                </Grid>
+              </Grid>
             </Grid>
-            <Grid item xs={12} className={classes.postLeft}>
-              <Typography variant="h5" gutterBottom className={classes.postTitle}>
+            <Grid item xs={12} className={classes.section}>
+              <Typography variant="h5" gutterBottom>
               Bibliographic research 
               </Typography>
               <Divider />
@@ -108,8 +118,8 @@ function HomePage() {
                ...
               </p>
             </Grid>
-            <Grid item xs={12} className={classes.postRight}>
-              <Typography variant="h5" gutterBottom className={classes.postTitleRight}>
+            <Grid item xs={12} className={classes.section}>
+              <Typography variant="h5" gutterBottom>
                 Resources
               </Typography>
               <Divider />
@@ -126,8 +136,8 @@ function HomePage() {
               link to product or demo
               </p>
             </Grid>
-            <Grid item xs={12} className={classes.postLeft}>
-              <Typography variant="h5" gutterBottom className={classes.postTitle}>
+            <Grid item xs={12} className={classes.section}>
+              <Typography variant="h5" gutterBottom>
                 Gallery
               </Typography>
               <Divider />

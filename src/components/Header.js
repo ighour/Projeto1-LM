@@ -7,8 +7,8 @@ import Typography from '@material-ui/core/Typography';
 const useStyles = makeStyles((theme) => ({
   toolbar: {
     borderBottom: `1px solid ${theme.palette.divider}`,
-    backgroundColor: theme.palette.primary.main,
-    color: theme.palette.primary.contrastText,
+    backgroundColor: theme.palette.secondary.main,
+    color: theme.palette.secondary.contrastText,
     marginBottom: theme.spacing(3)
   },
   toolbarTitle: {

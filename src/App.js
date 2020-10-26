@@ -2,7 +2,7 @@ import React from 'react';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { ThemeProvider } from '@material-ui/core/styles';
 import { Container } from '@material-ui/core';
-import theme from './theme/lightTheme';
+import theme from './theme/darkTheme';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import HomePage from './pages/HomePage';

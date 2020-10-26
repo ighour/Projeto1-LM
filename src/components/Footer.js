@@ -6,8 +6,8 @@ import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles((theme) => ({
   footer: {
-    backgroundColor: theme.palette.primary.main,
-    color: theme.palette.primary.contrastText,
+    backgroundColor: theme.palette.secondary.main,
+    color: theme.palette.secondary.contrastText,
     // marginTop: theme.spacing(8),
     padding: theme.spacing(6, 0),
   },
@@ -26,6 +26,7 @@ export default function Footer(props) {
         <Typography variant="subtitle1" align="center" component="p">
           {description}
         </Typography>
+        Team...
       </Container>
     </footer>
   );
