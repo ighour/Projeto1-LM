@@ -1,43 +1,32 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
+import logo from '../imgs/logo.png';
 
 const useStyles = makeStyles((theme) => ({
   toolbar: {
     borderBottom: `1px solid ${theme.palette.divider}`,
-    backgroundColor: theme.palette.secondary.main,
-    color: theme.palette.secondary.contrastText,
-    marginBottom: theme.spacing(3)
+    backgroundColor: theme.palette.primary.main,
+    color: theme.palette.primary.contrastText,
+    marginBottom: theme.spacing(3),
+    display: 'flex',
+    justifyContent: 'center',
+    justifyItems: 'center',
+    padding: theme.spacing(1)
   },
-  toolbarTitle: {
-    flex: 1
+  logo: {
+    height: '100px'
   }
 }));
 
 export default function Header(props) {
   const classes = useStyles();
-  const { title } = props;
 
   return (
     <React.Fragment>
       <Toolbar className={classes.toolbar}>
-        <Typography
-          component="h2"
-          variant="h5"
-          color="inherit"
-          align="center"
-          noWrap
-          className={classes.toolbarTitle}
-        >
-          {title}
-        </Typography>
+       <img alt="logo" src={logo} className={classes.logo}/>
       </Toolbar>
     </React.Fragment>
   );
 }
-
-Header.propTypes = {
-  title: PropTypes.string,
-};

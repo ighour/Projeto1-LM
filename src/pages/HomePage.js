@@ -1,11 +1,14 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/styles';
 import Grid from '@material-ui/core/Grid';
+import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
-// import MainFeaturedPost from '../components/homepage/MainFeaturedPost';
-// import FeaturedPost from '../components/homepage/FeaturedPost';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
 import { Player } from 'video-react';
+import UXMapImg from '../imgs/UXMap.png';
 
 const useStyles = makeStyles((theme) => ({
     mainGrid: {
@@ -13,44 +16,47 @@ const useStyles = makeStyles((theme) => ({
       paddingBottom: theme.spacing(3)
     },
     section: {
+      marginTop: theme.spacing(3),
       marginBottom: theme.spacing(5)
+    },
+    sectionTitle: {
+      color: theme.palette.primary.dark,
+      fontWeight: "bold",
+      backgroundColor: theme.palette.secondary.main,
+      borderRadius: "5px"
+    },
+    imgWrapper: {
+      display: 'flex',
+      justifyContent: 'center',
+      justifyItems: 'center',
+      padding: theme.spacing(2)
+    },
+    img: {
+      maxWidth: "100%"
+    },
+    paper: {
+      padding: theme.spacing(1),
+      backgroundColor: theme.palette.secondary.main,
+      color: theme.palette.secondary.main
+    },
+    about: {
+      color: theme.palette.primary.dark
+    },
+    pitch: {
+      backgroundColor: theme.palette.primary.main,
+      border: "1px solid",
+      borderColor: theme.palette.secondary.main,
+      borderRadius: "10px",
+      padding: theme.spacing(2),
+      minHeight: "400px"
     }
 }));
-  
-// const mainFeaturedPost = {
-//     title: 'Title of a longer featured blog post',
-//     description:
-//       "Multiple lines of text that form the lede, informing new readers quickly and efficiently about what's most interesting in this post's contents.",
-//     image: 'https://source.unsplash.com/random',
-//     imgText: 'main image description',
-//     linkText: 'Continue reading…',
-//   };
-  
-  // const featuredPosts = [
-  //   {
-  //     title: 'Featured post',
-  //     date: 'Nov 12',
-  //     description:
-  //       'This is a wider card with supporting text below as a natural lead-in to additional content.',
-  //     image: 'https://source.unsplash.com/random',
-  //     imageText: 'Image Text',
-  //   },
-  //   {
-  //     title: 'Post title',
-  //     date: 'Nov 11',
-  //     description:
-  //       'This is a wider card with supporting text below as a natural lead-in to additional content.',
-  //     image: 'https://source.unsplash.com/random',
-  //     imageText: 'Image Text',
-  //   },
-  // ];
   
 function HomePage() {
     const classes = useStyles();
 
     return (
         <React.Fragment>
-          {/* <MainFeaturedPost post={mainFeaturedPost} /> */}
           <Grid container spacing={1} className={classes.mainGrid}>
             <Grid item xs={12} className={classes.section}>
               <Player>
@@ -58,56 +64,147 @@ function HomePage() {
               </Player>
             </Grid>
             <Grid item xs={12} className={classes.section}>
-              <p>
-                About
-              </p>
-              {/* <Grid container spacing={4}>
-                {featuredPosts.map((post) => (
-                  <FeaturedPost key={post.title} post={post} />
-                ))}
-              </Grid> */}
+              <div className={classes.sectionTitle}>
+                <Typography variant="h5" gutterBottom align="center">
+                  About
+                </Typography>
+              </div>
+              <Paper className={classes.paper}>
+                <Grid container spacing={1} alignContent="space-around" justify="space-around">
+                  <Grid item xs={12} sm={6} md={4}>
+                    <Typography gutterBottom>
+                      ...
+                    </Typography>
+                  </Grid>
+                </Grid>
+              </Paper>
             </Grid>
-            <Grid item xs={12}>
-              <Typography variant="h5" gutterBottom align="right" color="primary">
-                Pitch
-              </Typography>
-              <Divider />
-              <Grid container spacing={1} alignContent="space-around" justify="space-around">
-                <Grid item xs={4}>
-                  <Typography variant="overline" gutterBottom align="center" color="secondary">
-                    What
-                  </Typography>
-                  <Typography>
-                    A digital immersive experience in a room with video and sound.
-                  </Typography>
-                  <Typography>
-                  A video telling the story of a soldier that comes home with a post traumatic stress disorder.
-                  </Typography>
-                  <Typography>
-                    The users heart rate will be measured to analyse, visually, it’s fluctuations as the experience advances.
-                  </Typography>
+            <Grid item xs={12} className={classes.section}>
+              <div className={classes.sectionTitle}>
+                <Typography variant="h5" gutterBottom align="center">
+                  Pitch
+                </Typography>
+              </div>
+              <Paper className={classes.paper}>
+                <Grid container spacing={1} alignContent="space-around" justify="space-around">
+                  <Grid item xs={12} sm={6} md={4}>
+                    <div className={classes.pitch}>
+                      <Typography variant="overline" gutterBottom align="center">
+                        What
+                      </Typography>
+                      <Divider light/>
+                      <List aria-label="what list">
+                        <ListItem>
+                          <ListItemText primary="A digital immersive experience in a room with video and sound." />
+                        </ListItem>
+                        <ListItem>
+                          <ListItemText primary="A video telling the story of a soldier that comes home with a post traumatic stress disorder." />
+                        </ListItem>
+                        <ListItem>
+                          <ListItemText primary="The users heart rate will be measured to analyse, visually, it’s fluctuations as the experience advances." />
+                        </ListItem>
+                      </List>
+                    </div>
+                  </Grid>
+                  <Grid item xs={12} sm={6} md={4}>
+                    <div className={classes.pitch}>
+                      <Typography variant="overline" gutterBottom align="center">
+                        Why
+                      </Typography>
+                      <Divider light/>
+                      <List aria-label="why list">
+                        <ListItem>
+                          <ListItemText primary="Bring awareness to mental disorders, especially in school projects." />
+                        </ListItem>
+                        <ListItem>
+                          <ListItemText primary="Understand behaviours of the patient and understand how to help." />
+                        </ListItem>
+                        <ListItem>
+                          <ListItemText primary="Conscious donations to associations that support PTSD." />
+                        </ListItem>
+                      </List>
+                    </div>
+                  </Grid>
+                  <Grid item xs={12} sm={6} md={4}>
+                    <div className={classes.pitch}>
+                      <Typography variant="overline" gutterBottom align="center">
+                        Who
+                      </Typography>
+                      <Divider light/>
+                      <List aria-label="who list">
+                        <ListItem>
+                          <ListItemText primary="People who want to know more about post-war trauma." />
+                        </ListItem>
+                        <ListItem>
+                          <ListItemText primary="Family and friends of those with the trauma." />
+                        </ListItem>
+                        <ListItem>
+                          <ListItemText primary="Students looking for references." />
+                        </ListItem>
+                      </List>
+                    </div>
+                  </Grid>
+                  <Grid item xs={12} sm={6} md={4}>
+                    <div className={classes.pitch}>
+                      <Typography variant="overline" gutterBottom align="center">
+                        How - Product
+                      </Typography>
+                      <Divider light/>
+                      <List aria-label="how product list">
+                        <ListItem>
+                          <ListItemText primary="Our key partners would be High Schools and Universities, Associations related to mental disorders, Journals, Tv channels and Municipal Councils." />
+                        </ListItem>
+                        <ListItem>
+                          <ListItemText primary="Our costs would pass by the electronic components, tools and construction materials." />
+                        </ListItem>
+                        <ListItem>
+                          <ListItemText primary="As far as revenue streams go, it is a non-profit campaign, meaning that all financial aid will be obtained through donations." />
+                        </ListItem>
+                      </List>
+                    </div>
+                  </Grid>
+                  <Grid item xs={12} sm={6} md={4}>
+                    <div className={classes.pitch}>
+                      <Typography variant="overline" gutterBottom align="center">
+                        How - Interface
+                      </Typography>
+                      <Divider light/>
+                      <List aria-label="how interface list">
+                        <ListItem>
+                          <ListItemText primary="We intend to create a single user simulation/experience of the disorder by placing the user in an immersive environment (an installation in the dark with no stimuli other than our video and sound) and having him/her follow a linear story about a soldier that comes from war with PTSD." />
+                        </ListItem>
+                        <ListItem>
+                          <ListItemText primary="We’ll also have a heart rate measurer and respective video visualization." />
+                        </ListItem>
+                      </List>
+                    </div>
+                  </Grid>
+                  <Grid item xs={12} sm={6} md={4}>
+                    <div className={classes.pitch}>
+                      <Typography variant="overline" gutterBottom align="center">
+                        How - Communication
+                      </Typography>
+                      <Divider light/>
+                      <List aria-label="how communication list">
+                        <ListItem>
+                          <ListItemText primary="We will have a website, social media accounts and some physical publicity (flyers, posters)." />
+                        </ListItem>
+                      </List>
+                    </div>
+                  </Grid>
+                  <Grid item xs={12} sm={12} md={12}>
+                    <div className={classes.pitch}>
+                      <Typography variant="overline" gutterBottom align="center">
+                        UX Mapping
+                      </Typography>
+                      <Divider light/>
+                      <div className={classes.imgWrapper}>
+                       <img alt="ux map" src={UXMapImg} className={classes.img}/>
+                      </div>
+                    </div>
+                  </Grid>
                 </Grid>
-                <Grid item xs={4}>
-                  <Typography variant="overline" gutterBottom align="center" color="secondary">
-                    Why
-                  </Typography>
-                </Grid>
-                <Grid item xs={4}>
-                  <Typography variant="overline" gutterBottom align="center" color="secondary">
-                    Who
-                  </Typography>
-                </Grid>
-                <Grid item xs={4}>
-                  <Typography variant="overline" gutterBottom align="center" color="secondary">
-                    How
-                  </Typography>
-                </Grid>
-                <Grid item xs={4}>
-                  <Typography variant="overline" gutterBottom align="center" color="secondary">
-                    UX Mapping
-                  </Typography>
-                </Grid>
-              </Grid>
+              </Paper>
             </Grid>
             <Grid item xs={12} className={classes.section}>
               <Typography variant="h5" gutterBottom>
